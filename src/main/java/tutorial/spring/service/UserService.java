@@ -1,7 +1,7 @@
-package test.service;
+package tutorial.spring.service;
 
 import java.util.List;
-import test.model.User;
+import tutorial.spring.model.User;
 
 public interface UserService {
     void add(User user);

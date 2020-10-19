@@ -1,10 +1,10 @@
-package test.service.impl;
+package tutorial.spring.service.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import test.dao.UserDao;
-import test.model.User;
-import test.service.UserService;
+import tutorial.spring.dao.UserDao;
+import tutorial.spring.model.User;
+import tutorial.spring.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

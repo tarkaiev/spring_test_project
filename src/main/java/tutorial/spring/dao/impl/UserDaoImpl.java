@@ -1,4 +1,4 @@
-package test.dao.impl;
+package tutorial.spring.dao.impl;
 
 import java.util.List;
 import org.hibernate.Session;
@@ -6,8 +6,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
-import test.dao.UserDao;
-import test.model.User;
+import tutorial.spring.dao.UserDao;
+import tutorial.spring.model.User;
 
 @Repository
 public class UserDaoImpl implements UserDao {

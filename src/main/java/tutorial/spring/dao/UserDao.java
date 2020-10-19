@@ -1,7 +1,7 @@
-package test.dao;
+package tutorial.spring.dao;
 
 import java.util.List;
-import test.model.User;
+import tutorial.spring.model.User;
 
 public interface UserDao {
     void add(User user);

@@ -1,4 +1,4 @@
-package test.config;
+package tutorial.spring.config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import test.model.User;
+import tutorial.spring.model.User;
 
 @Configuration
 @ComponentScan(basePackages = {
-        "test.dao",
-        "test.service"
+        "tutorial.spring.dao",
+        "tutorial.spring.service"
 })
 public class AppConfig {
     @Bean

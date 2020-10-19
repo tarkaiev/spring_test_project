@@ -1,9 +1,9 @@
-package test;
+package tutorial.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import test.config.AppConfig;
-import test.model.User;
-import test.service.UserService;
+import tutorial.spring.config.AppConfig;
+import tutorial.spring.model.User;
+import tutorial.spring.service.UserService;
 
 public class Main {
     public static void main(String[] args) {
