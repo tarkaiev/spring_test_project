@@ -1,12 +1,12 @@
 package tutorial.spring.controllers;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 import tutorial.spring.dto.UserResponseDto;
 import tutorial.spring.model.User;
 import tutorial.spring.service.UserService;
@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("/inject")
-    public void injectUsers() {
+    public RedirectView injectUsers() {
         User user1 = new User("user1@gmail.com", "password");
         User user2 = new User("user2@gmail.com", "password");
         User user3 = new User("user3@gmail.com", "password");
@@ -32,6 +32,7 @@ public class UserController {
         userService.add(user2);
         userService.add(user3);
         userService.add(user4);
+        return new RedirectView("/user");
     }
 
     @GetMapping
@@ -43,10 +44,8 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public UserResponseDto get(@PathVariable Long userId) {
-        Optional<User> user = userService.listUsers().stream()
-                .filter(userFromList -> userFromList.getId().equals(userId))
-                .findFirst();
-        return getUserRespDto(user.orElseThrow());
+
+        return getUserRespDto(userService.get(userId));
     }
 
     private UserResponseDto getUserRespDto(User user) {
