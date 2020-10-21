@@ -38,17 +38,16 @@ public class UserController {
     @GetMapping
     public List<UserResponseDto> getAll() {
         return userService.listUsers().stream()
-                .map(this::getUserRespDto)
+                .map(this::getUserResponseDto)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/{userId}")
     public UserResponseDto get(@PathVariable Long userId) {
-
-        return getUserRespDto(userService.get(userId));
+        return getUserResponseDto(userService.get(userId));
     }
 
-    private UserResponseDto getUserRespDto(User user) {
+    private UserResponseDto getUserResponseDto(User user) {
         UserResponseDto dto = new UserResponseDto();
         dto.setId(user.getId());
         dto.setEmail(user.getEmail());
